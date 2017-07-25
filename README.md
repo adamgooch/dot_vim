@@ -21,11 +21,17 @@ $ cp .vim/vimrc .vimrc
 
 Open vim and install the plugins with `:PlugInstall`. When vim is opened,
 you'll get a warning that the color scheme isn't installed, but that is okay.
-Just press enter.
 
 ```shell
 Error detected while processing /home/adam/.vimrc:
 line   28:
 E185: Cannot find color scheme 'blah'
 Press ENTER or type command to continue
+```
+
+If you want to reload your current vim session with the newly installed plugins
+(ie. you have a bunch of files open that you don't want to reopen)
+
+```
+:so ~/.vimrc
 ```
