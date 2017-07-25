@@ -97,8 +97,14 @@ set wildignore+=*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
 
 
 if has("autocmd")
-  au FileType cpp,c,java,sh,pl,php set cindent
-  au BufRead *.py set cinwords=if,elif,else,for,while,try,except,finally,def,class
-  au BufRead *.rb set cinwords=if,elsif,else,unless,for,while,begin,rescue,def,class,module
+  augroup MyAutoCommands
+    " Clear the auto command group so we don't define it multiple times, idea from
+    " http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
+    autocmd!
+
+    au FileType cpp,c,java,sh,pl,php set cindent
+    au BufRead *.py set cinwords=if,elif,else,for,while,try,except,finally,def,class
+    au BufRead *.rb set cinwords=if,elsif,else,unless,for,while,begin,rescue,def,class,module
+  augroup END
 endif
 
