@@ -1,6 +1,10 @@
 # .vim
 
-Clone into home directory:
+My Vim setup.
+
+## Installation
+
+Clone this repository into home directory:
 
 ```shell
 $ cd
@@ -19,14 +23,44 @@ Copy the `vimrc` file into the home directory
 $ cp .vim/vimrc .vimrc
 ```
 
-Open vim and install the plugins with `:PlugInstall`. When vim is opened,
-you'll get a warning that the color scheme isn't installed, but that is okay.
+## Workflow Dependencies
+
+There are few external dependencies that my workflow has.
+
+### Ack
+
+This plugin requires the `ack` command line utililty and/or The Silver Searcher.
+On my mac, these are both installed via homebrew:
 
 ```shell
-Error detected while processing /home/adam/.vimrc:
-line   28:
-E185: Cannot find color scheme 'blah'
-Press ENTER or type command to continue
+$ brew install ack
+$ brew install the_silver_searcher
+```
+
+### Exuberant Ctags
+
+Exuberant Ctags is better than the default ctag installation on MacOS. I install
+it via homebrew:
+
+```shell
+$ brew install ctags
+```
+
+I don't use the Easy Tags plugin at the moment so the tags are generated on a per
+project basis by entering the project root directory and running ctags:
+
+```shell
+$ cd ~/source/aview
+$ ctags -R
+```
+
+### Plugins
+
+Oopen vim (you'll get a warning that the color scheme isn't installed, but that is
+okay). Install the plugins within Vim with:
+
+```
+:PlugInstall
 ```
 
 If you want to reload your current vim session with the newly installed plugins
