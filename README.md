@@ -14,7 +14,11 @@ $ git clone https://github.com/gpneuma/dot_vim
 Move the contents of dot_vim to `.vim` (including the git files)
 
 ```shell
+[Bash]
 $ mv dot_vim/.[!.]* .vim
+
+[Zsh]
+$ mv dot_vim/*(DN) .vim/
 ```
 
 Copy the `vimrc` file into the home directory
